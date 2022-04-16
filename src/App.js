@@ -3,6 +3,8 @@ import React , { Component } from 'react';
 import './App.css';
 import { CardList } from './components/card-list/card-list.component'
 import {SearchBox} from './components/search-box/search-box.component'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Pokeinfo from './components/solo-card/Poke-info';
 
 class App extends Component {
   constructor() {
@@ -12,11 +14,25 @@ class App extends Component {
       searchField: ''
     }
   }
-  componentDidMount() {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=500')
-    .then(response => response.json())
-    .then(results => results['results'])
-    .then(users => this.setState({monsters: users}))
+  // componentDidMount() {
+  //   fetch('https://pokeapi.co/api/v2/pokemon?limit=500')
+  //   .then(response => response.json())
+    
+  //   .then(results => results['results'])
+  //   .then(users => this.setState({monsters: users}))
+  // }
+
+  componentDidMount=async()=> {
+    try{
+    const response=await fetch('https://pokeapi.co/api/v2/pokemon?limit=500');
+    const data=await response.json();
+    console.log(response);
+    console.log(data.results);
+    this.setState({monsters: data.results})
+    }
+    catch(err){
+      console.log(err);
+    }
   }
 
 
@@ -31,12 +47,19 @@ class App extends Component {
        monster.name.toLowerCase().includes(searchField.toLocaleLowerCase()))
     
     return (
-      <div className="App">
-      <h1>Simple Pokedex</h1>
+      
+      <div className="App ">
+       
+        
+        <hr/>
+      <h1>Simple Pokedex</h1><hr/>
       <SearchBox 
       placeholder="Search Pokemon"
-      handleChange={ this.handleChange } />
+      handleChange={ this.handleChange } /><hr/>
+      <div className='scroller'>
       <CardList monsters={filteredMonsters}/>
+      </div>
+      
       </div>
     );
   }

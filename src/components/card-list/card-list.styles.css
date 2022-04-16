@@ -1,8 +1,29 @@
+
 .card-list {
+ 
+  background-color: transparent;
     width: auto;
     margin: auto;
+    margin-left: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
-  }
   
+  }
+  @media (max-width: 480px) {
+    .card-list {
+      width: 100%;
+      margin: auto;
+      display: block;
+      /* flex-direction: row;
+      flex-wrap: wrap; */
+      align-items: center;
+      
+    }
+    .poke-tile{ 
+     margin: 10px;
+     margin-bottom: 20px;
+      /* background-color: rgb(255, 255, 255); */
+
+  }
+  }
