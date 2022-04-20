@@ -7,7 +7,7 @@ export const Card = (props) => {
   const [stats, setStats] = useState([{ base_stat: "NaN" }, { base_stat: "NaN" }, { base_stat: "NaN" }])
   const navigate = useNavigate();
   useEffect(() => {
-    // console.log(stats);
+
   }, [stats])
 
   const handleAction = async (ele) => {
@@ -36,17 +36,14 @@ export const Card = (props) => {
             <div class="details" onClick={() => handleAction(props.monster.url)}>
               <div class="content">
                 <h1>Stats</h1>
-                {/* <p>Hp:{stats[0].base_stat}</p>
-                    <p>Attack:{stats[1].base_stat}</p>
-                    <p>Defence:{stats[2].base_stat}</p> */}
               </div></div>
           </div>
         </div>
-        
+
         <div class="card-block">
           <h4 class="card-title">{props.monster.name}</h4>
           <p class="card-text">{props.monster.email}</p>
         </div>
-        
+
       </div></div>);
 }

@@ -12,9 +12,13 @@ h1 {
 .scroller {
   height: 80vh;
   overflow: scroll;
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
-.scroller::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+
+.scroller::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
 }
