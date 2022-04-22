@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import {BrowserRouter,Route,Routes} from "react-router-dom"
+import Pokeinfo from './components/solo-card/Poke-info';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  
+  <BrowserRouter>
+      <Routes>
+      <Route path="/simple-pokedex" element={<App/>} ></Route>
+        <Route exact path="/poke/info" element={<Pokeinfo/>}> </Route>
+        </Routes>
+    </BrowserRouter>
+    ,
   document.getElementById('root')
 );
 

@@ -1,9 +1,24 @@
 .App {
   text-align: center;
+  background-color: transparent;
 }
 
 h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 72px;
   color: black;
+}
+
+.scroller {
+  height: 80vh;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
 }

@@ -1,0 +1,18 @@
+.styles{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: cover;
+    text-transform: capitalize;
+}
+.info-box {
+    color: #ffffff;
+}
+.info-box span{
+    color: #04d9ff;
+}
+@media (max-width: 480px) {
+    .styles{
+      max-width:100%;
+     
+      overflow:hidden;
+    }
+  }
